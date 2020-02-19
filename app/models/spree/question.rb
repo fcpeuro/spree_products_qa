@@ -7,7 +7,7 @@ class Spree::Question < ActiveRecord::Base
   default_scope ->{ order("spree_questions.created_at DESC") }
   scope :visible, ->{ where(is_visible: true) }
   scope :answered, ->{ joins(:answer) }
-  scope :not_answered, ->{ where.not(id: self.answered.pluck(:id)) }
+  scope :not_answered, ->{ includes(:answer).where('spree_answers.id IS NULL').references(:answercategories) }
 
   validates :content, presence: true
 
