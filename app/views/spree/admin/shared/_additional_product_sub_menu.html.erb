@@ -1,0 +1,3 @@
+<%= content_tag :li, :class => ('selected' if request.fullpath.starts_with?("#{spree.admin_path}/questions/pending")) do %>
+  <%= link_to qna_tab_label, spree.pending_admin_questions_path %>
+<% end %>
