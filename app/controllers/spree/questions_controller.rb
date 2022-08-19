@@ -1,5 +1,5 @@
 class Spree::QuestionsController < Spree::StoreController
-  before_filter :load_data
+  before_action :load_data
 
   def create
     question = @product.questions.new(allowed_params)
