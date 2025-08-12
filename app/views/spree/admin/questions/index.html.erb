@@ -55,8 +55,8 @@
   </table>
 <% else %>
   <div class="alpha twelve columns no-objects-found">
-    <%= Spree.t(:no_resource_found, resource: Spree::Question.model_name.human) %>,
-    <%= link_to Spree.t(:add_one), new_admin_product_question_url %>!
+    <%= I18n.t('spree.no_resource_found', resource: Spree::Question.model_name.human) %>,
+    <%= link_to I18n.t('spree.add_one'), new_admin_product_question_url %>!
   </div>
 <% end %>
 
